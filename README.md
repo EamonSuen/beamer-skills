@@ -1,6 +1,6 @@
 # Beamer Skills
 
-This is the canonical repository for the Beamer Academic Template. It contains both the Agent Skill and the bundled Beamer starter template.
+This is the canonical repository for a Beamer academic-presentation skill. It contains both the Agent Skill and a bundled Beamer starter template.
 
 Agent Skill for creating, adapting, and maintaining Chinese/English academic Beamer presentations.
 
@@ -110,25 +110,31 @@ Then commit `.claude/skills/beamer/` to that project if the skill should be shar
 
 ## Font Dependency
 
-The source Beamer template expects a local clone of:
+The bundled Beamer template uses `fontspec` paths rather than system font names. It expects `main.tex` to define `\FontRoot` as the directory containing a clone of:
 
 ```text
 https://github.com/Haixing-Hu/latex-chinese-fonts
 ```
 
-at:
+The bundled default is the project-local path:
 
 ```text
-/Users/eamonsuen/Documents/GitHub/latex-chinese-fonts
+fonts/latex-chinese-fonts
 ```
 
 The Beamer template points to that location through `main.tex`:
 
 ```tex
-\newcommand{\FontRoot}{/Users/eamonsuen/Documents/GitHub/latex-chinese-fonts}
+\newcommand{\FontRoot}{fonts/latex-chinese-fonts}
 ```
 
-On another machine, either clone the font repository to the same path or update `\FontRoot` to the local font repository path.
+For the default setup, clone the font repository into the generated deck:
+
+```bash
+git clone https://github.com/Haixing-Hu/latex-chinese-fonts.git fonts/latex-chinese-fonts
+```
+
+Alternatively, clone it elsewhere and update `\FontRoot` before compiling.
 
 ## Bundled Template
 

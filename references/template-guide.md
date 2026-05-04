@@ -1,14 +1,10 @@
 # Beamer Academic Template Guide
 
-## Source Project
+## Bundled Template
 
 Bundled template root:
 
 `${CLAUDE_SKILL_DIR}/assets/beamer-universal-academic-template`
-
-Local source project used to maintain the bundled copy:
-
-`/Users/eamonsuen/Documents/GitHub/beamer-universal-academic-template`
 
 Use the bundled template as the canonical reference for layout, package choices, font configuration, and example content. When adapting it into another deck, preserve the same structure unless the user requests a different organization.
 
@@ -44,9 +40,11 @@ Avoid cleanup commands unless the user asks. If cleanup is requested, follow loc
 
 ## Font Repository Assumptions
 
-The template uses `XeLaTeX`, `ctex`, and `fontspec` with a fixed local font repository. This directory is expected to be a local clone of `https://github.com/Haixing-Hu/latex-chinese-fonts`:
+The template uses `XeLaTeX`, `ctex`, and `fontspec` with a configurable local font repository path. The font repository should be a clone of `https://github.com/Haixing-Hu/latex-chinese-fonts`.
 
-`/Users/eamonsuen/Documents/GitHub/latex-chinese-fonts`
+The bundled default path is project-local:
+
+`fonts/latex-chinese-fonts`
 
 Current defaults:
 
@@ -57,12 +55,12 @@ Current defaults:
 - Chinese sans: `STHeiti.ttf`
 - Chinese mono substitute: `SimHei.ttf`
 
-If the target machine does not have this font repository, either clone `https://github.com/Haixing-Hu/latex-chinese-fonts` to the same path, ask the user for the intended font path, or switch `main.tex` to project-local fonts under `fonts/serif/`, `fonts/sans/`, and `fonts/mono/`.
+If the target deck does not have this font repository at the bundled default path, either clone it into `fonts/latex-chinese-fonts`, ask the user for the intended font path, clone the repository elsewhere and update `\FontRoot`, or switch `main.tex` to project-local fonts under `fonts/serif/`, `fonts/sans/`, and `fonts/mono/`.
 
 The project-level font setting lives in `main.tex`:
 
 ```tex
-\newcommand{\FontRoot}{/Users/eamonsuen/Documents/GitHub/latex-chinese-fonts}
+\newcommand{\FontRoot}{fonts/latex-chinese-fonts}
 ```
 
 When moving the deck to another machine, update only `\FontRoot` if the cloned font repository is stored elsewhere.

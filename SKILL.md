@@ -1,6 +1,6 @@
 ---
 name: beamer
-description: Create, adapt, and maintain Chinese/English academic Beamer presentations using the local beamer-universal-academic-template project. Use when Codex needs to make course reports, thesis defenses, research talks, seminars, academic slide decks, XeLaTeX Beamer files, bibliography-enabled presentations, or slides based on this reusable template.
+description: Create, adapt, and maintain Chinese/English academic Beamer presentations from a bundled XeLaTeX template. Use when working on course reports, thesis defenses, research talks, seminars, academic slide decks, Beamer .tex files, biblatex presentations, or slide layouts based on the included sample gallery.
 ---
 
 # Beamer Academic Template
@@ -36,7 +36,7 @@ latexmk -xelatex -outdir=output main.tex
 
 - Prefer concise research-talk slides: one claim per slide, short bullets, and details in appendix.
 - Use Chinese/English mixed text naturally; the template already configures `ctex`, `fontspec`, and CJK fonts.
-- Treat `/Users/eamonsuen/Documents/GitHub/latex-chinese-fonts` as a local clone of `https://github.com/Haixing-Hu/latex-chinese-fonts`; if the clone is missing, restore that path or update `\FontRoot` in `main.tex`.
+- Treat `\FontRoot` in `main.tex` as the configurable font repository path. The bundled template currently points to a clone of `https://github.com/Haixing-Hu/latex-chinese-fonts`; update `\FontRoot` if that clone lives elsewhere.
 - Use the provided academic boxes for emphasis when appropriate: `findingbox`, `methodbox`, `regressionbox`, `robustbox`, `policybox`, and `cautionbox`.
 - Use `booktabs` style tables and avoid dense tables unless they are central to the talk.
 - Keep captions, citations, and appendix material formal enough for academic presentation.

@@ -84,22 +84,22 @@ latexmk -c -outdir=output main.tex
 
 ## 字体说明
 
-模板默认直接使用本机固定路径下的字体仓库。该目录应为
+模板默认使用 `main.tex` 中 `\FontRoot` 指向的本地字体仓库。该目录应为
 [`Haixing-Hu/latex-chinese-fonts`](https://github.com/Haixing-Hu/latex-chinese-fonts)
-的本地 clone：
+的本地 clone。当前 bundled 默认路径是项目内路径：
 
-- `/Users/eamonsuen/Documents/GitHub/latex-chinese-fonts`
+- `fonts/latex-chinese-fonts`
 
-如果你在新机器上使用本模板，可选择：
+如果你在新机器上使用本模板，可选择 clone 到项目内默认路径：
 
 ```bash
-git clone https://github.com/Haixing-Hu/latex-chinese-fonts.git /Users/eamonsuen/Documents/GitHub/latex-chinese-fonts
+git clone https://github.com/Haixing-Hu/latex-chinese-fonts.git fonts/latex-chinese-fonts
 ```
 
-或者修改 `main.tex` 中的：
+或者 clone 到任意本地路径，然后修改 `main.tex` 中的：
 
 ```tex
-\newcommand{\FontRoot}{/Users/eamonsuen/Documents/GitHub/latex-chinese-fonts}
+\newcommand{\FontRoot}{/path/to/latex-chinese-fonts}
 ```
 
 当前默认配置：
@@ -115,7 +115,7 @@ git clone https://github.com/Haixing-Hu/latex-chinese-fonts.git /Users/eamonsuen
 
 - 不依赖 Fontconfig 或系统字体注册状态
 - 字体粗体、斜体映射可以显式控制
-- 换机器后只要该仓库路径不变，编译结果更一致
+- 换机器后只要该仓库路径或 `\FontRoot` 配置一致，编译结果更一致
 
 如果你希望针对单个项目使用自带字体，也可以把字体文件放入：
 
@@ -123,7 +123,7 @@ git clone https://github.com/Haixing-Hu/latex-chinese-fonts.git /Users/eamonsuen
 - `fonts/sans/`
 - `fonts/mono/`
 
-然后在 [main.tex](/Users/eamonsuen/Documents/GitHub/beamer-universal-academic-template/main.tex) 中取消对应注释并调整文件名。
+然后在 `main.tex` 中取消对应注释并调整文件名。
 
 ## 建议
 
@@ -135,7 +135,7 @@ git clone https://github.com/Haixing-Hu/latex-chinese-fonts.git /Users/eamonsuen
 
 配套 Agent Skill：
 
-- <https://github.com/EamonSuen/beamer-academic-template>
+- <https://github.com/EamonSuen/beamer-skills>
 
 该 skill 可安装到 Codex 或 Claude Code，用于让 agent 按本模板创建和维护学术 Beamer 幻灯片。
 

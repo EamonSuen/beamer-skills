@@ -82,11 +82,12 @@ recursive deletion commands.
 The default font root is configured in `main.tex` as:
 
 ```tex
-\newcommand{\FontRoot}{/Users/eamonsuen/Documents/GitHub/latex-chinese-fonts}
+\newcommand{\FontRoot}{fonts/latex-chinese-fonts}
 ```
 
-Do not change this absolute font path unless the user asks for a portable or
-project-local font setup. If adding project-local fonts, place them under:
+Treat this path as a configurable default, not a portable assumption. If the
+font repository lives elsewhere, update `\FontRoot`. If adding project-local
+fonts, place them under:
 
 - `fonts/serif/`
 - `fonts/sans/`
