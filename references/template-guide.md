@@ -2,11 +2,15 @@
 
 ## Source Project
 
-Template root:
+Bundled template root:
+
+`${CLAUDE_SKILL_DIR}/assets/beamer-universal-academic-template`
+
+Local source project used to maintain the bundled copy:
 
 `/Users/eamonsuen/Documents/GitHub/beamer-universal-academic-template`
 
-Use this project as the canonical reference for layout, package choices, font configuration, and example content. When adapting it into another deck, preserve the same structure unless the user requests a different organization.
+Use the bundled template as the canonical reference for layout, package choices, font configuration, and example content. When adapting it into another deck, preserve the same structure unless the user requests a different organization.
 
 ## Project Structure
 
@@ -22,6 +26,9 @@ Use this project as the canonical reference for layout, package choices, font co
 - `figures/`: charts, diagrams, and logo assets.
 - `references.bib`: default bibliography file used by `main.tex`.
 - `bib/references.bib`: alternate bibliography location retained by the template.
+- `main.pdf`: preview build of the template.
+
+The bundled copy intentionally excludes generated LaTeX auxiliary files, `output/`, `.texpadtmp`, `.DS_Store`, and `tmp1.tmp`.
 
 ## Compile
 
@@ -88,15 +95,26 @@ Use these for compact emphasis, not for every slide.
 
 ## Common Tasks
 
+### Create a New Deck From the Bundled Template
+
+Use the helper script when a user wants a new deck directory:
+
+```bash
+python scripts/create_deck.py /absolute/path/to/new-deck
+```
+
+The target directory must not already exist. If it exists, inspect it and ask the user how to proceed instead of overwriting.
+
 ### Create a New Research Talk
 
 1. Set title metadata in `main.tex`.
 2. Replace the five main section files with the talk narrative.
 3. Put backup details in `sections/99_appendix.tex`.
 4. Add citations to `references.bib`.
-5. Replace example figures and tables with project-specific assets.
-6. Decide whether to comment out `\input{sections/00_slide_gallery}` for a formal deck.
-7. Compile and fix the first LaTeX error before addressing downstream errors.
+5. Use `sections/00_slide_gallery.tex` as the sample library for layouts and LaTeX patterns.
+6. Replace example figures and tables with project-specific assets.
+7. Decide whether to comment out `\input{sections/00_slide_gallery}` for a formal deck.
+8. Compile and fix the first LaTeX error before addressing downstream errors.
 
 ### Add a Figure Slide
 
@@ -130,7 +148,7 @@ Use `\textcite{key}` for narrative citations and `\parencite{key}` for parenthet
 
 ### Use the Slide Gallery
 
-Open `sections/00_slide_gallery.tex` when the user asks for layout ideas, example Beamer constructs, multi-column slides, table patterns, boxes, code listings, TikZ diagrams, or appendix patterns. Copy the relevant frame pattern into the real section file and adapt the content.
+Open `sections/00_slide_gallery.tex` when the user asks for layout ideas, example Beamer constructs, multi-column slides, table patterns, boxes, code listings, TikZ diagrams, or appendix patterns. Copy the relevant frame pattern into the real section file and adapt the content. Do not treat the sample gallery as production talk content.
 
 ## Editing Preferences
 

@@ -10,6 +10,8 @@ The skill is compatible with tools that support the Agent Skills `SKILL.md` conv
 - Uses `XeLaTeX + ctex + biblatex` assumptions from the source template.
 - Documents the expected project layout: `main.tex`, `sections/`, `tables/`, `figures/`, and bibliography files.
 - Preserves the template's Chinese/English font setup and academic slide conventions.
+- Bundles the full MIT-licensed sample template, including the slide gallery, figures, tables, bibliography, and preview PDF.
+- Provides a safe helper script for creating a new deck directory without overwriting existing paths.
 
 ## Repository Layout
 
@@ -18,6 +20,10 @@ beamer-academic-template/
 ├── SKILL.md
 ├── agents/
 │   └── openai.yaml
+├── assets/
+│   └── beamer-universal-academic-template/
+├── scripts/
+│   └── create_deck.py
 ├── references/
 │   └── template-guide.md
 ├── LICENSE
@@ -39,6 +45,12 @@ Use it in Codex with:
 
 ```text
 Use $beamer-academic-template to create or adapt an academic Beamer presentation.
+```
+
+To create a new deck from the bundled template:
+
+```bash
+python ~/.codex/skills/beamer-academic-template/scripts/create_deck.py /absolute/path/to/new-deck
 ```
 
 If the skill already exists, update it with:
@@ -70,6 +82,12 @@ or invoke it directly:
 
 ```text
 /beamer-academic-template
+```
+
+To create a new deck from the bundled template:
+
+```bash
+python ~/.claude/skills/beamer-academic-template/scripts/create_deck.py /absolute/path/to/new-deck
 ```
 
 If Claude Code was already running before installation, restart Claude Code or ask it to list available skills.
@@ -112,13 +130,21 @@ On another machine, either clone the font repository to the same path or update 
 
 ## Source Template
 
-This skill is written around the Beamer template at:
+This skill includes a bundled copy of the Beamer template at:
 
 ```text
-/Users/eamonsuen/Documents/GitHub/beamer-universal-academic-template
+assets/beamer-universal-academic-template
 ```
 
-When using this skill outside that machine, provide the target Beamer project path and font path if they differ.
+The bundled copy intentionally excludes generated LaTeX auxiliary files, `output/`, `.texpadtmp`, `.DS_Store`, and `tmp1.tmp`.
+
+The source template is maintained at:
+
+```text
+https://github.com/EamonSuen/beamer-universal-academic-template
+```
+
+When using this skill outside the original machine, provide the target Beamer project path and font path if they differ.
 
 ## Validate
 

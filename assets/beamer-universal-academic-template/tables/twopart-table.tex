@@ -1,0 +1,31 @@
+\begin{table}
+  \centering
+  \caption{异质性分析：双面板（Two-Panel Heterogeneity）}
+  {\footnotesize
+  \begin{tabular}{lcc}
+    \toprule
+    & (1) 低收入组 & (2) 高收入组 \\
+    \midrule
+    \multicolumn{3}{l}{\textit{面板 A：城市样本}} \\
+    \midrule
+    处理效应   & 0.142**  & 0.098*   \\
+               & (0.058)  & (0.052)  \\
+    控制变量   & 是       & 是       \\
+    $N$        & 600      & 600      \\
+    \midrule
+    \multicolumn{3}{l}{\textit{面板 B：农村样本}} \\
+    \midrule
+    处理效应   & 0.072    & 0.031    \\
+               & (0.074)  & (0.069)  \\
+    控制变量   & 是       & 是       \\
+    $N$        & 400      & 400      \\
+    \midrule
+    \multicolumn{3}{l}{\textit{面板差异（A $-$ B）}} \\
+    \midrule
+    差值       & 0.070    & 0.067    \\
+    $p$ 值     & 0.043    & 0.061    \\
+    \bottomrule
+    \multicolumn{3}{l}{%
+      \footnotesize ** $p<0.05$，* $p<0.1$。括号内为聚类稳健标准误。}
+  \end{tabular}}
+\end{table}
