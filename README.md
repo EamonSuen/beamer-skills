@@ -1,4 +1,4 @@
-# Beamer Academic Template Skill
+# Beamer Skills
 
 This is the canonical repository for the Beamer Academic Template. It contains both the Agent Skill and the bundled Beamer starter template.
 
@@ -18,7 +18,7 @@ The skill is compatible with tools that support the Agent Skills `SKILL.md` conv
 ## Repository Layout
 
 ```text
-beamer-academic-template/
+beamer/
 ├── SKILL.md
 ├── agents/
 │   └── openai.yaml
@@ -38,27 +38,27 @@ Install as a personal Codex skill:
 
 ```bash
 mkdir -p ~/.codex/skills
-git clone https://github.com/EamonSuen/beamer-academic-template.git ~/.codex/skills/beamer-academic-template
+git clone https://github.com/EamonSuen/beamer-skills.git ~/.codex/skills/beamer
 ```
 
-If `~/.codex/skills/beamer-academic-template` already exists, inspect it first and use the update command below instead of cloning over it.
+If `~/.codex/skills/beamer` already exists, inspect it first and use the update command below instead of cloning over it.
 
 Use it in Codex with:
 
 ```text
-Use $beamer-academic-template to create or adapt an academic Beamer presentation.
+Use $beamer to create or adapt an academic Beamer presentation.
 ```
 
 To create a new deck from the bundled template:
 
 ```bash
-python ~/.codex/skills/beamer-academic-template/scripts/create_deck.py /absolute/path/to/new-deck
+python ~/.codex/skills/beamer/scripts/create_deck.py /absolute/path/to/new-deck
 ```
 
 If the skill already exists, update it with:
 
 ```bash
-git -C ~/.codex/skills/beamer-academic-template pull --ff-only
+git -C ~/.codex/skills/beamer pull --ff-only
 ```
 
 ## Install For Claude Code
@@ -69,10 +69,10 @@ Install this skill with:
 
 ```bash
 mkdir -p ~/.claude/skills
-git clone https://github.com/EamonSuen/beamer-academic-template.git ~/.claude/skills/beamer-academic-template
+git clone https://github.com/EamonSuen/beamer-skills.git ~/.claude/skills/beamer
 ```
 
-If `~/.claude/skills/beamer-academic-template` already exists, inspect it first and use the update command below instead of cloning over it.
+If `~/.claude/skills/beamer` already exists, inspect it first and use the update command below instead of cloning over it.
 
 Use it in Claude Code either naturally:
 
@@ -83,13 +83,13 @@ Help me create a Chinese/English academic Beamer deck for my research presentati
 or invoke it directly:
 
 ```text
-/beamer-academic-template
+/beamer
 ```
 
 To create a new deck from the bundled template:
 
 ```bash
-python ~/.claude/skills/beamer-academic-template/scripts/create_deck.py /absolute/path/to/new-deck
+python ~/.claude/skills/beamer/scripts/create_deck.py /absolute/path/to/new-deck
 ```
 
 If Claude Code was already running before installation, restart Claude Code or ask it to list available skills.
@@ -97,16 +97,16 @@ If Claude Code was already running before installation, restart Claude Code or a
 Update the installed skill with:
 
 ```bash
-git -C ~/.claude/skills/beamer-academic-template pull --ff-only
+git -C ~/.claude/skills/beamer pull --ff-only
 ```
 
 For a project-local Claude Code installation, clone or vendor this repository under the target project:
 
 ```text
-.claude/skills/beamer-academic-template/SKILL.md
+.claude/skills/beamer/SKILL.md
 ```
 
-Then commit `.claude/skills/beamer-academic-template/` to that project if the skill should be shared with collaborators.
+Then commit `.claude/skills/beamer/` to that project if the skill should be shared with collaborators.
 
 ## Font Dependency
 
@@ -153,7 +153,7 @@ Prefer this repository for new installs, issues, and future updates.
 Codex skill validation:
 
 ```bash
-python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py ~/.codex/skills/beamer-academic-template
+python ~/.codex/skills/.system/skill-creator/scripts/quick_validate.py ~/.codex/skills/beamer
 ```
 
 If your default Python does not include PyYAML, run the validator from a Python environment that has `PyYAML` installed.

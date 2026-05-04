@@ -1,4 +1,4 @@
 interface:
-  display_name: "Beamer Academic Template"
+  display_name: "Beamer"
   short_description: "Build Chinese/English academic Beamer slides"
-  default_prompt: "Use $beamer-academic-template to create or adapt an academic Beamer presentation."
+  default_prompt: "Use $beamer to create or adapt an academic Beamer presentation."

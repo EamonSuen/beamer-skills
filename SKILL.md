@@ -1,5 +1,5 @@
 ---
-name: beamer-academic-template
+name: beamer
 description: Create, adapt, and maintain Chinese/English academic Beamer presentations using the local beamer-universal-academic-template project. Use when Codex needs to make course reports, thesis defenses, research talks, seminars, academic slide decks, XeLaTeX Beamer files, bibliography-enabled presentations, or slides based on this reusable template.
 ---
 
