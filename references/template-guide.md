@@ -93,15 +93,21 @@ Use these for compact emphasis, not for every slide.
 
 ## Common Tasks
 
-### Create a New Deck From the Bundled Template
+### Create a New Working Directory From the Bundled Template
 
-Use the helper script when a user wants a new deck directory:
+Use the helper script when a user wants a new deck. Pick a clear target path first, usually a short slug under the user's project area:
 
 ```bash
 python scripts/create_deck.py /absolute/path/to/new-deck
 ```
 
-The target directory must not already exist. If it exists, inspect it and ask the user how to proceed instead of overwriting.
+If parent directories are intentionally missing, create them with:
+
+```bash
+python scripts/create_deck.py --parents /absolute/path/to/new-deck
+```
+
+The target directory must not already exist. If it exists, inspect it and ask the user how to proceed instead of overwriting. After creation, treat the new deck directory as the working directory for edits and compilation.
 
 ### Create a New Research Talk
 

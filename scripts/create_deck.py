@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Safely copy the bundled Beamer template into a new deck directory."""
+"""Safely create a new Beamer working directory from the bundled template."""
 
 from __future__ import annotations
 
@@ -11,11 +11,16 @@ from pathlib import Path
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Create a new Beamer deck from the bundled academic template."
+        description="Create a new Beamer working directory from the bundled academic template."
     )
     parser.add_argument(
         "target",
         help="New deck directory to create. The path must not already exist.",
+    )
+    parser.add_argument(
+        "--parents",
+        action="store_true",
+        help="Create missing parent directories before creating the deck directory.",
     )
     return parser.parse_args()
 
@@ -34,12 +39,16 @@ def main() -> int:
         print(f"Refusing to overwrite existing path: {target}", file=sys.stderr)
         return 2
 
+    if not target.parent.exists() and args.parents:
+        target.parent.mkdir(parents=True)
+
     if not target.parent.is_dir():
         print(f"Parent directory does not exist: {target.parent}", file=sys.stderr)
+        print("Use --parents to create missing parent directories.", file=sys.stderr)
         return 3
 
     shutil.copytree(template_dir, target)
-    print(f"Created Beamer deck at: {target}")
+    print(f"Created Beamer working directory at: {target}")
     return 0
 
 

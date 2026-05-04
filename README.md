@@ -13,7 +13,7 @@ The skill is compatible with tools that support the Agent Skills `SKILL.md` conv
 - Documents the expected project layout: `main.tex`, `sections/`, `tables/`, `figures/`, and bibliography files.
 - Preserves the template's Chinese/English font setup and academic slide conventions.
 - Bundles the full MIT-licensed sample template, including the slide gallery, figures, tables, bibliography, and preview PDF.
-- Provides a safe helper script for creating a new deck directory without overwriting existing paths.
+- Provides a safe helper script for creating a new deck working directory without overwriting existing paths.
 
 ## Repository Layout
 
@@ -49,10 +49,16 @@ Use it in Codex with:
 Use $beamer to create or adapt an academic Beamer presentation.
 ```
 
-To create a new deck from the bundled template:
+To create a new deck working directory from the bundled template:
 
 ```bash
 python ~/.codex/skills/beamer/scripts/create_deck.py /absolute/path/to/new-deck
+```
+
+Use `--parents` when the parent folders should be created too:
+
+```bash
+python ~/.codex/skills/beamer/scripts/create_deck.py --parents ~/Documents/BeamerProjects/research-talk-2026
 ```
 
 If the skill already exists, update it with:
@@ -86,10 +92,16 @@ or invoke it directly:
 /beamer
 ```
 
-To create a new deck from the bundled template:
+To create a new deck working directory from the bundled template:
 
 ```bash
 python ~/.claude/skills/beamer/scripts/create_deck.py /absolute/path/to/new-deck
+```
+
+Use `--parents` when the parent folders should be created too:
+
+```bash
+python ~/.claude/skills/beamer/scripts/create_deck.py --parents ~/Documents/BeamerProjects/research-talk-2026
 ```
 
 If Claude Code was already running before installation, restart Claude Code or ask it to list available skills.

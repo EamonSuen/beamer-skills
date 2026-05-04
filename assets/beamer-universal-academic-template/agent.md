@@ -20,6 +20,10 @@ explicitly requested.
 - Expected engine: `XeLaTeX`
 - Bibliography backend: `biber`
 
+Treat the deck directory as the working directory. Run build commands from the
+deck root so relative paths for `sections/`, `tables/`, `figures/`, and fonts
+resolve consistently.
+
 The template is designed for Chinese and English academic slides using
 `ctex`, `fontspec`, `biblatex`, `tikz`, `tcolorbox`, `listings`, and Beamer's
 standard layout tools.
