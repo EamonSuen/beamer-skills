@@ -1,6 +1,8 @@
 # Beamer Academic Template Skill
 
-Agent Skill for creating, adapting, and maintaining Chinese/English academic Beamer presentations based on the local `beamer-universal-academic-template` project.
+This is the canonical repository for the Beamer Academic Template. It contains both the Agent Skill and the bundled Beamer starter template.
+
+Agent Skill for creating, adapting, and maintaining Chinese/English academic Beamer presentations.
 
 The skill is compatible with tools that support the Agent Skills `SKILL.md` convention, including Codex and Claude Code.
 
@@ -128,7 +130,7 @@ The Beamer template points to that location through `main.tex`:
 
 On another machine, either clone the font repository to the same path or update `\FontRoot` to the local font repository path.
 
-## Source Template
+## Bundled Template
 
 This skill includes a bundled copy of the Beamer template at:
 
@@ -138,13 +140,13 @@ assets/beamer-universal-academic-template
 
 The bundled copy intentionally excludes generated LaTeX auxiliary files, `output/`, `.texpadtmp`, `.DS_Store`, and `tmp1.tmp`.
 
-The source template is maintained at:
+The older standalone template repository is retained only as an archived historical reference:
 
 ```text
 https://github.com/EamonSuen/beamer-universal-academic-template
 ```
 
-When using this skill outside the original machine, provide the target Beamer project path and font path if they differ.
+Prefer this repository for new installs, issues, and future updates.
 
 ## Validate
 
